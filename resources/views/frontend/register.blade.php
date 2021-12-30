@@ -370,14 +370,19 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="account-login-inner">
-                        <form action="#" class="ltn__form-box contact-form-box">
+
+
+
+                        <form method= "POST" action="{{route('login')}}" class="ltn__form-box contact-form-box">
+                            @csrf 
+
                             <input type="text" name="firstname" placeholder="First Name">
                             <input type="text" name="lastname" placeholder="Last Name">
                             <input type="text" name="email" placeholder="Email*">
                             <input type="password" name="password" placeholder="Password*">
                             <input type="password" name="confirmpassword" placeholder="Confirm Password*">
                             <label class="checkbox-inline">
-                                <input type="checkbox" value="">
+                            <input type="checkbox" value="">
                                 I consent to Herboil processing my personal data in order to send personalized marketing material in accordance with the consent form and the privacy policy.
                             </label>
                             <label class="checkbox-inline">
@@ -388,6 +393,13 @@
                                 <button class="theme-btn-1 btn reverse-color btn-block" type="submit">CREATE ACCOUNT</button>
                             </div>
                         </form>
+
+
+
+
+
+
+
                         <div class="by-agree text-center">
                             <p>By creating an account, you agree to our:</p>
                             <p><a href="#">TERMS OF CONDITIONS  &nbsp; &nbsp; | &nbsp; &nbsp;  PRIVACY POLICY</a></p>

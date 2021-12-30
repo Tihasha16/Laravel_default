@@ -36,7 +36,7 @@
                         <div class="ltn__top-bar-menu">
                             <ul>
                                 <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> info@webmail.com</a></li>
-                                <li><a href="locations.html"><i class="icon-placeholder"></i> 15/A, Nest Tower, NYC</a></li>
+                                <li><a href="locations.html"><i class="icon-placeholder"></i> Dhanmondi, Dhaka</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                                 <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
                                                 
                                                 <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+                                                <!-- <li><a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a></li> -->
                                             </ul>
                                         </div>
                                     </li>
@@ -90,7 +90,7 @@
                             <nav>
                                 <div class="ltn__main-menu">
                                     <ul>
-                                        <li class="menu-icon"><a href="index.html">Home</a>
+                                        <li class="menu-icon"><a href="{{route('home')}}">Home</a>
                                         </li>
 
                                         <li class="menu-icon"><a href="about.html">About</a>

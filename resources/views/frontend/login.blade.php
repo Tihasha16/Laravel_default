@@ -561,7 +561,7 @@
     <!-- All JS Plugins -->
     <script src="{{ asset('frontend/js/plugins.js') }}"></script>
     <!-- Main JS -->
-    <script src="{{asset('frontend/js/main.js') }}"></script>
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
   
 </body>
 
