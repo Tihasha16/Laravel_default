@@ -29,22 +29,37 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="../../index.html" method="post">
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input name="email" type="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                        @error('email')
+                        <div class="container">
+                            <div class="row">
+                                <div class="text-danger">{{ $message }}</div>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input name="password" type="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                        @error('password')
+                        <div class="container">
+                            <div class="row">
+                                <div class="text-danger">{{ $message }}</div>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="row">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
