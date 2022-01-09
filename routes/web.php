@@ -6,7 +6,12 @@ use Illuminate\Support\Facades\Route;
 
 // Admin Routes
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+
+    Route::get('/login', function () {
+        return view('admin.login');
+    })->name('admin.login');
+
+    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('is_admin');
 });
 
 
