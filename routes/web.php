@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,9 @@ Route::group(['prefix' => 'admin'], function () {
     })->name('admin.login');
 
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('is_admin');
+
+    // admin logout
+    Route::post('admin-logout', [AdminController::class, 'logout'])->name('admin.logout')->middleware('is_admin');
 });
 
 

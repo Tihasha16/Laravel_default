@@ -53,11 +53,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ auth()->logout() }}" class="nav-link active">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>Create Room</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="logout_btn" href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Logout</p>
                             </a>
                         </li>
+                        <form id="logout_form" method="POST" action="{{ route('admin.logout') }}" class="d-none">
+                            @csrf
+                            <button type="button" class="btn btn-primary">Logout</button>
+                        </form>
                     </ul>
                 </nav>
             </div>
@@ -116,6 +126,11 @@
     <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
     <script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
+    <script>
+        $(document).click('#logout_btn',function(){
+            $('#logout_form').submit();
+        })
+    </script>
 </body>
 
 </html>
