@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -12,10 +13,13 @@ Route::group(['prefix' => 'admin'], function () {
         return view('admin.login');
     })->name('admin.login');
 
-    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('is_admin');
+    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // admin logout
     Route::post('admin-logout', [AdminController::class, 'logout'])->name('admin.logout')->middleware('is_admin');
+
+    // Rooms route
+    Route::get('room/create', [RoomController::class, 'create'])->name('room.create');
 });
 
 
